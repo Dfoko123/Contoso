@@ -10,12 +10,12 @@ namespace ContosoUniversity.Models
         public int ID { get; set; }
         [StringLength(60, MinimumLength = 3)]
         [Required]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         [Required]
         [StringLength(30)]
         [Display(Name = "First MiddLE Name")]
-        public string FirstMidName { get; set; }
+        public string? FirstMidName { get; set; }
         [Display(Name = "Enrollment Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd-MM-yyyy}", ApplyFormatInEditMode=true)]
@@ -29,6 +29,6 @@ namespace ContosoUniversity.Models
             }
         }
 
-        public ICollection<Enrollment>? Enrollments { get; set; }
+        public ICollection<Enrollment> ?Enrollments { get; set; }
     }
 }
